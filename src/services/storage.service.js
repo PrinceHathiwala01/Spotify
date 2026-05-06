@@ -4,7 +4,7 @@ const ImageKitClient=new ImageKit({
 });
 
 async function uploadFile(file) {
-    const result=await ImageKitClient.upload({
+    const result=await ImageKitClient.files.upload({
         file,
         fileName: "Music_" + Date.now(),
         folder:"/spotify/music",

@@ -10,9 +10,9 @@ async function createMusic(req, res) {
             message: "Unauthorized",
         });
     }
-    
+    let decoded;
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        decoded = jwt.verify(token, process.env.JWT_SECRET);
         if(decoded.role !== "artist"){
             return res.status(403).json({
                 message: "You are not an artist",
