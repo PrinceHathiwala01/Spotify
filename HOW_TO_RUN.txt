@@ -21,7 +21,7 @@ localhost:3000/api/auth/login
 --Posting Music(Can be done by those whose roll is artist)
 localhost:3000/api/music/upload
 --Example
-Postman -> Body -> Form-data -> music and caption are two fields
+Postman -> Body -> Form-data -> music and title are two fields
 
 
 --Creating album of multiple songs
