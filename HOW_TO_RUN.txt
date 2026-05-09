@@ -1,0 +1,33 @@
+--Adding new user
+localhost:3000/api/auth/register
+--Example
+{
+    "username": "Priti",
+    "email": "pritihathiwala@gmail.com",
+    "password": "priti123",
+    "role":"artist"
+}
+
+
+--Check login Credential(Can be done with username or email too)
+localhost:3000/api/auth/login
+--Example
+{
+    "email":"krishnahathiwala@gmail.com",
+    "password":"krishna123"
+}
+
+
+--Posting Music(Can be done by those whose roll is artist)
+localhost:3000/api/music/upload
+--Example
+Postman -> Body -> Form-data -> music and caption are two fields
+
+
+--Creating album of multiple songs
+localhost:3000/api/album/album
+--Example
+{
+    "title":"Test_album",
+    "musics":["69fb1ae6c79c09f4d0d08c91","69fc3c5b74c8796eda56c2ad"]
+}

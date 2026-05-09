@@ -10,6 +10,7 @@ async function authArtist(req, res, next) {
         if(decoded.role !== "artist"){
             return res.status(403).json({ message: "You dont have access" });
         }
+        req.user = decoded;
         next();
     } catch (err) {
         return res.status(401).json({
