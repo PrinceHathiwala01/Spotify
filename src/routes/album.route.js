@@ -4,4 +4,4 @@ const router = express.Router();
 
 router.post("/album", albumController.createAlbum);
 
-module.exports = router;
+module.exports = router1;
