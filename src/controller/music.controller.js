@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv').config();
 
 async function createMusic(req, res) {
+    /*This code is moved to auth middleware
+    
     const token = req.cookies.token;
     if (!token) {
         return res.status(401).json({
@@ -13,7 +15,7 @@ async function createMusic(req, res) {
     let decoded;
     try {
         decoded = jwt.verify(token, process.env.JWT_SECRET);
-        if(decoded.role !== "artist"){
+        if (decoded.role !== "artist") {
             return res.status(403).json({
                 message: "You are not an artist",
             });
@@ -22,7 +24,7 @@ async function createMusic(req, res) {
         return res.status(401).json({
             message: "Unauthorized",
         });
-    }
+    }*/
 
     const { title } = req.body;
     const file = req.file;

@@ -2,6 +2,9 @@ const albumModel = require('../models/album.model');
 const jwt = require('jsonwebtoken');
 
 async function createAlbum(req, res) {
+
+    /*This code is moved to auth middleware
+    
     const token = req.cookies.token;
     if (!token) {
         return res.status(401).json({
@@ -16,6 +19,11 @@ async function createAlbum(req, res) {
                 message: "You are not an artist",
             });
         }
+    } catch (err) {
+        return res.status(401).json({
+            message: "Unauthorized",
+        });
+    }*/
 
         const { title, musics } = req.body;
 
@@ -34,11 +42,6 @@ async function createAlbum(req, res) {
                 artist: album.artist,
             },
         });        
-    } catch (err) {
-        return res.status(401).json({
-            message: "Unauthorized",
-        });
-    }
 }
 
 module.exports = { createAlbum };
